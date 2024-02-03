@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+</head>
+<body>
+
+<h1>User Details</h1>
+<h2> {{ user_info }} </h2>
+{% if user_info %}
+    <ul>
+        {% for user in user_info %}
+            <li>{{ user }}</li>
+            <!-- Add more attributes as needed -->
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>User not found</p>
+{% endif %}
+
+<a href="{{ url_for('retrieve_info') }}">Back to Retrieve Info</a>
+
+</body>
+</html>
+
